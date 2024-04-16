@@ -2,11 +2,12 @@ extends Node2D
 
 @export var monedas :int = 0
 @export var nombre :String = "Kylian"
+var velocidad = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(get_global_mouse_position().normalized())
+	print(Input.get_vector("Izquierda", "Derecha", "Arriba", "Abajo"))
 	pass
