@@ -10,4 +10,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var direction = Input.get_vector("Izquierda", "Derecha", "Arriba", "Abajo")
-	position = direction * velocidad * delta
+	position = position + (direction * velocidad * delta)
