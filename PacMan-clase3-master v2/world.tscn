@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://mlc3qviw5baq"]
+
+[ext_resource type="PackedScene" uid="uid://cvkeovxkojor0" path="res://juego_background.tscn" id="1_bki4j"]
+[ext_resource type="Script" path="res://world.gd" id="1_opgpp"]
+[ext_resource type="PackedScene" uid="uid://h2s8osdkw7t4" path="res://comida.tscn" id="2_jl153"]
+[ext_resource type="PackedScene" uid="uid://dhv6qjfvd2uix" path="res://personaje.tscn" id="3_jilqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jgws"]
+size = Vector2(58, 50)
+
+[node name="World" type="Node"]
+script = ExtResource("1_opgpp")
+
+[node name="JuegoBackground" parent="." instance=ExtResource("1_bki4j")]
+metadata/_edit_lock_ = true
+
+[node name="Comida2" parent="." instance=ExtResource("2_jl153")]
+position = Vector2(800, 320)
+
+[node name="Comida" parent="." instance=ExtResource("2_jl153")]
+
+[node name="Personaje" parent="." instance=ExtResource("3_jilqn")]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.347222
+anchor_top = 0.160494
+anchor_right = 0.590278
+anchor_bottom = 0.259259
+metadata/_edit_use_anchors_ = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node"]
+position = Vector2(312, 312)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/StaticBody2D"]
+position = Vector2(-2.53333, 0.435715)
+scale = Vector2(0.916667, 0.991071)
+polygon = PackedVector2Array(-16, -24, 32, -8, -8, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(392, 360)
+shape = SubResource("RectangleShape2D_1jgws")

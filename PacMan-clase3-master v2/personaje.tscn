@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhv6qjfvd2uix"]
+
+[ext_resource type="Script" path="res://Personaje.gd" id="1_7i4k2"]
+[ext_resource type="Texture2D" uid="uid://cnl7e83rsujvh" path="res://Pacman1.jpg" id="2_67ayh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1vtv"]
+radius = 40.0
+height = 144.0
+
+[node name="Personaje" type="Node2D"]
+position = Vector2(128, 320)
+script = ExtResource("1_7i4k2")
+
+[node name="PacMan" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(2.75, 2.875)
+texture = ExtResource("2_67ayh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-12, 1.43051e-06)
+scale = Vector2(3.6, 8.8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-24, 0)
+shape = SubResource("CapsuleShape2D_x1vtv")

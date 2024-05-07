@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://mlc3qviw5baq"]
+
+[ext_resource type="Script" path="res://Personaje.gd" id="1_00bw2"]
+[ext_resource type="PackedScene" uid="uid://cvkeovxkojor0" path="res://juego_background.tscn" id="1_bki4j"]
+[ext_resource type="Texture2D" uid="uid://cnl7e83rsujvh" path="res://Pacman1.jpg" id="3_d14iu"]
+
+[node name="World" type="Node"]
+
+[node name="JuegoBackground" parent="." instance=ExtResource("1_bki4j")]
+
+[node name="Personaje" type="Node2D" parent="."]
+position = Vector2(128, 320)
+script = ExtResource("1_00bw2")
+
+[node name="PacMan" type="Sprite2D" parent="Personaje"]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(2.75, 2.875)
+texture = ExtResource("3_d14iu")
